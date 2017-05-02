@@ -1,15 +1,18 @@
+// Require mongoose for connection to mongoDB and Body Parser for easy gathering of data from form 
 var mongoose = require('mongoose'),
 	bodyParser = require('body-parser');
 
 // mLab connection
 // mongoose.connect('')
 
-var notesSchema = new Schema({
+// Template for Notes
+var notesSchema = new mongoose.Schema({
 	title: String,
 	note: String,
 	date: Number
 })
 
+// Model for notes schema
 var Note = mongoose.model('Note', notesSchema)
 
 // Dummy Data
@@ -18,3 +21,12 @@ var data = [{title: 'Grocery List', note: 'Apples, bananas, chicken, mixed green
 			{title: 'My friends', note: 'Bobert, Sue, Jefferman93', date: 20140316}];
 
 var urlendcodedParser = bodyParser.urlencoded({extended: false})
+
+// GET, POST, DELETE requests
+
+module.exports = function(app) {
+	
+	app.get('/', function(req, res) {
+		res.render('index')
+	})
+}
