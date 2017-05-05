@@ -80,3 +80,6 @@ nav a {
 
 /* Add Note */
 
+.addNote-wrapper form {
+	margin-top: 30px;
+}
