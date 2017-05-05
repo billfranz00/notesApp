@@ -10,17 +10,25 @@
 
 <% include partials/nav.ejs %>
 
-<h1>Welcome to your Notes Bro!!!</h1>
+<div class="homepage-wrapper">
+	
+	<h1>Welcome to your Notes Bro!!!</h1>
 
-<h3>Check out your last three updated notes listed below&hellip;</h3>
+	<h3>Check out your last three updated notes listed below&hellip;</h3>
 
-<% for(var i = 0; i < 3; i++) { %>
-	<ul class="homeNotes">
-		<li><%= notes[i].title %></li>
-		<li><%= notes[i].note %></li>
-		<li><%= notes[i].date %></li>
-	</ul>	
-<% } %>
+	<div class="homeNotes">
+		
+		<% for(var i = 0; i < 3; i++) { %>
+			<ul class="theNotes">
+				<li><%= notes[i].title %></li>
+				<li><%= notes[i].note %></li>
+				<li><%= notes[i].date %></li>
+			</ul>	
+		<% } %>
+
+	</div>
+
+</div>
 
 </body>
 </html>

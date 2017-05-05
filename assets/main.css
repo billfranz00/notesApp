@@ -1,4 +1,73 @@
-.homeNotes {
+/* Global Styles */
+* {
+	margin: 0;
+}
+
+h1 {
+	font-size: 50px;
+	font-family: Verdana;
+	margin-top: 30px;
+}
+
+h3 {
+	font-size: 30px;
+	margin-top: 20px;
+}
+
+.theNotes {
 	float: left;
 	width: 30%;
+	text-align: left;
+}
+
+/* Navigation */
+nav {
+	height: 55px;
+	background: black;
+}
+
+nav ul {
+	list-style: none;
+}
+
+nav li {
+	display: inline-block;
+	padding: 15px 20px 17px;
+	font-size: 20px;
+	font-family: arial;
+	font-weight: 600;
+	color: white;
+}
+
+nav li:hover {
+	color: black;
+	background: white;
+}
+
+nav a {
+	text-decoration: none;
+}
+
+/* Homepage */
+
+.homepage-wrapper {
+	text-align: center;
+}
+
+.homepage-wrapper .homeNotes {
+	margin-top: 30px; 
+}
+
+/* All Notes */
+
+.noteList-wrapper {
+	text-align: center;
+}
+
+.noteList-wrapper .allNotes {
+	margin-top: 10px;
+}
+
+.noteList-wrapper .theNotes {
+	margin-top: 20px;
 }
