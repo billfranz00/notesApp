@@ -20,6 +20,12 @@ h3 {
 	text-align: left;
 }
 
+.homepage-wrapper,
+.addNote-wrapper,
+.allNotes-wrapper {
+	text-align: center;
+}
+
 /* Navigation */
 nav {
 	height: 55px;
@@ -71,3 +77,6 @@ nav a {
 .noteList-wrapper .theNotes {
 	margin-top: 20px;
 }
+
+/* Add Note */
+

@@ -35,4 +35,8 @@ module.exports = function(app) {
 	app.get('/noteList', function(req, res) {
 		res.render('noteList', {notes: data})
 	})
+
+	app.get('/addNote', function(req, res) {
+		res.render('addNote')
+	})
 }
