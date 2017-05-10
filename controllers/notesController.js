@@ -39,4 +39,9 @@ module.exports = function(app) {
 	app.get('/addNote', function(req, res) {
 		res.render('addNote')
 	})
+
+	app.post('/addNote', urlendcodedParser, function(req, res) {
+		data.push(req.body)
+		res.json(data)
+	})
 }
