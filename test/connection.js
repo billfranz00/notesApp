@@ -4,14 +4,14 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 // Before all tests
-// before(function(done) {
+before(function(done) {
 	// connect to mongodb
 	mongoose.connect('mongodb://localhost/test')
 
 	mongoose.connection.once('open', function() {
 		console.log('Connection is complete')
-		// done();
+		done();
 	}).on('error', function(error) {
 		console.log('Connection Error', error)
 	})
-// })
+})
