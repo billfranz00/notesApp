@@ -19,6 +19,9 @@
 	<div class="homeNotes">
 		
 		<% for(var i = 0; i < 3; i++) { %>
+			<% if(notes[i] === undefined) { %>
+				<% break; %> 
+			<% } %>
 			<ul class="theNotes">
 				<li><%= notes[i].title %></li>
 				<li><%= notes[i].note %></li>
