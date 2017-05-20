@@ -6,7 +6,7 @@ mongoose.Promise = global.Promise;
 // Before all tests
 before(function(done) {
 	// connect to mongodb
-	mongoose.connect('mongodb://localhost/test')
+	mongoose.connect('mongodb://localhost/noteTest')
 
 	mongoose.connection.once('open', function() {
 		console.log('Connection is complete')
@@ -15,3 +15,11 @@ before(function(done) {
 		console.log('Connection Error', error)
 	})
 })
+
+// Drop (delete) the characters collection before each test
+beforeEach(function(done) {
+	// Drop the collection
+	mongoose.connection.collections.notes.drop(function() { // mongoose pluralizes our model
+		done();
+	});
+});

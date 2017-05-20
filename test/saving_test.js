@@ -11,7 +11,7 @@ describe('Saving Records', function() {
 		})
 		note.save().then(function() {
 			assert(note.isNew === false)
-			done()
+			done();
 		})
 	})
 })

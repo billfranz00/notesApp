@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
 	Note = require('../models/notesSchema')
 
 // MongoDB connection
-// mongoose.connect('mongodb/localhost/')
+// mongoose.connect('mongodb://localhost/noteTest')
 
 // Template for Notes
 // var notesSchema = new mongoose.Schema({
