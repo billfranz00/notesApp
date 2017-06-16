@@ -4,7 +4,8 @@ var mongoose = require('mongoose'),
 	Note = require('../models/notesSchema');
 
 // MongoDB connection
-mongoose.connect('mongodb://localhost/noteTest')
+// mongoose.connect('mongodb://localhost/noteTest')
+mongoose.connect('mongodb://billfranz00:test@ds127982.mlab.com:27982/notesapp');
 
 // Template for Notes
 // var notesSchema = new mongoose.Schema({
@@ -39,7 +40,11 @@ module.exports = function(app) {
 	})
 
 	app.get('/noteList', function(req, res) {
-		res.render('noteList', {notes: data})
+		Note.find({}, function(err, data) {
+			if(err) throw err;
+			res.render('noteList', {notes: data})
+		})
+		// res.render('noteList', {notes: data})
 	})
 
 	app.get('/addNote', function(req, res) {
@@ -47,7 +52,11 @@ module.exports = function(app) {
 	})
 
 	app.post('/addNote', urlendcodedParser, function(req, res) {
-		data.push(req.body)
-		res.json(data)
+		// data.push(req.body)
+		// res.json(data)
+		Note(req.body).save(function(err, data) {
+			if(err) throw err;
+			res.json(data)
+		})
 	})
 }
