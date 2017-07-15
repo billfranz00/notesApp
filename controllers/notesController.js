@@ -3,19 +3,12 @@ var mongoose = require('mongoose'),
 	bodyParser = require('body-parser'),
 	Note = require('../models/notesSchema');
 
+// Set up ES6 Library
+mongoose.Promise = global.Promise;
+
 // MongoDB connection
 // mongoose.connect('mongodb://localhost/noteTest')
 mongoose.connect('mongodb://billfranz00:test@ds127982.mlab.com:27982/notesapp');
-
-// Template for Notes
-// var notesSchema = new mongoose.Schema({
-// 	title: String,
-// 	note: String,
-// 	date: Number
-// })
-
-// Model for notes schema
-// var Note = mongoose.model('Note', notesSchema)
 
 // Dummy Data
 // var data = [{title: 'Grocery List', note: 'Apples, bananas, chicken, mixed greens', date: 20170423},

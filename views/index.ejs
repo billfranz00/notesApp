@@ -23,9 +23,9 @@
 				<% break; %> 
 			<% } %>
 			<ul class="theNotes">
-				<li><%= notes[i].title %></li>
+				<li><%= notes[i].title %> <span class="delete">X</span></li>
 				<li><%= notes[i].note %></li>
-				<li><%= notes[i].date %></li>
+				<li>Date Added: <%= notes[i].date %></li>
 			</ul>	
 		<% } %>
 

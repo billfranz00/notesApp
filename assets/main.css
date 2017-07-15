@@ -78,6 +78,32 @@ nav a {
 	margin-top: 20px;
 }
 
+/* Notes Default */
+.theNotes li {
+	list-style: none;
+}
+
+.theNotes li:first-child {
+	text-align: center;
+	font-weight: 600;
+	text-decoration: underline;
+	margin-bottom: 5px;
+}
+
+.theNotes li .delete {
+	background: black;
+	color: white;
+	float: right;
+	border-radius: 50%;
+	padding: 2px 5px;
+}
+
+.theNotes li:last-child {
+	text-align: right;
+	font-size: 12px;
+	margin-top: 15px;
+}
+
 /* Add Note */
 
 .addNote-wrapper form {
