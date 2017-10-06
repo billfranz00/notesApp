@@ -98,6 +98,10 @@ nav a {
 	padding: 2px 5px;
 }
 
+.theNotes li .delete:hover {
+	cursor: pointer; 
+}
+
 .theNotes li:last-child {
 	text-align: right;
 	font-size: 12px;

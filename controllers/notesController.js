@@ -26,7 +26,7 @@ module.exports = function(app) {
 	app.get('/', function(req, res) {
 		Note.find({}, function(err, data) {
 			if(err) throw err;
-			console.log(data)
+			// console.log(data)
 			res.render('index', {notes: data});
 		})
 		// res.render('index', {notes: data})
@@ -48,6 +48,13 @@ module.exports = function(app) {
 		// data.push(req.body)
 		// res.json(data)
 		Note(req.body).save(function(err, data) {
+			if(err) throw err;
+			res.json(data)
+		})
+	})
+
+	app.delete('/noteList/:title', function(req, res) {
+		Note.find({title: req.params.title.replace(/-/g, " ")}).remove(function(err, data) {
 			if(err) throw err;
 			res.json(data)
 		})

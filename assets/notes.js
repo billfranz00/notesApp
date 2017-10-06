@@ -12,11 +12,27 @@ $(document).ready(function() {
 			data: item,
 			success: function(data) {
 				console.log(data)
-				console.log("note added")
+				alert("note added")
+				location.assign('./');
 			}
 		});
 
 		return false;
+	})
+
+	$('.delete').on('click', function() {
+		var item = $(this).parent().text(),
+			title = item.slice(0, item.length - 2).replace(/ /g, '-'),
+			uberParent = $(this).parentsUntil('.allNotes');
+		console.log(title);
+		$.ajax({
+			type: 'DELETE',
+			url: '/noteList/' + title,
+			success: function() {
+				uberParent.remove();
+				console.log('Note Removed');
+			}
+		})
 	})
 
 })
